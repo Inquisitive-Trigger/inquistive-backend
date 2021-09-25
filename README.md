@@ -1,24 +1,35 @@
-# README
+# inquistive-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 本番環境
 
-Things you may want to cover:
+http://3.113.26.48/
 
-* Ruby version
+## 開発環境構築手順
 
-* System dependencies
+- rbenv(rubyのバージョン管理ツール)インストール
 
-* Configuration
+https://qiita.com/hujuu/items/3d600f2b2384c145ad12
 
-* Database creation
+- ruby2.7.1インストール
 
-* Database initialization
+```
+$ rbenv install 2.7.1
+$ rbenv local 2.7.1 (←ルートディレクトリで行う)
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+以下ルートディレクトリでの作業
 
-* Deployment instructions
+- 開発環境用の.envファイルをダウンロードしてルートに追加
 
-* ...
+https://files.slack.com/files-pri/TT0KSMXHV-F02F7PP4U4F/download/.env
+
+- gemインストール
+
+`bundle install --path vendor/bundle`
+
+- サーバー起動
+
+`bundle exec rails s`
+
+http://localhost:3000 にアクセス
