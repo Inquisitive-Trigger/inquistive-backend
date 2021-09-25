@@ -19,10 +19,10 @@ default: &default
 
 development:
   <<: *default
-  username: admin
-  password: qjyqMy2i5CH7S3w
-  host: inquisitive-test-db.ccqsps7d2wjo.ap-northeast-1.rds.amazonaws.com
-  database: development
+  username: <%= ENV["DEV_DB_USER"] %>
+  password: <%= ENV["DEV_DB_PASSWORD"] %>
+  host: <%= ENV["DEV_DB_HOST"] %>
+  database: <%= ENV["DEV_DB_DATABASE"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -53,6 +53,7 @@ test:
 #
 production:
   <<: *default
-  database: inquistive_backend_production
-  username: inquistive_backend
-  password: <%= ENV['INQUISTIVE_BACKEND_DATABASE_PASSWORD'] %>
+  username: <%= ENV["PROD_DB_USER"] %>
+  password: <%= ENV["PROD_DB_PASSWORD"] %>
+  host: <%= ENV["PROD_DB_HOST"] %>
+  database: <%= ENV["PROD_DB_DATABASE"] %>
