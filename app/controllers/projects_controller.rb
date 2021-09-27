@@ -29,7 +29,23 @@ class ProjectsController < ApplicationController
     if project.save!
       render json: { status: 201, project: project }
     else
-      render json: { status: 400, token: "Bad Request" }
+      render json: { status: 400, message: "Bad Request" }
+    end
+  end
+
+  def update
+    project = Project.find([params[:id]])[0]
+    project.assign_attributes(
+      name: params[:name],
+      concept: params[:concept],
+      deadline: DateTime.parse(params[:deadline]),
+      reward: params[:reward].to_i,
+      category: params[:category]
+    )
+    if project.save!
+      render json: { status: 200, project: project }
+    else
+      render json: { status: 400, message: "Bad Request" }
     end
   end
 end
