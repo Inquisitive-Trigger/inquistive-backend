@@ -1,0 +1,33 @@
+PUT /application_companies/:id
+
+parameters
+- id
+- name
+- detail
+- reason
+- contactName
+- contactEmail
+- phoneNumber
+
+responses
+
+{
+    "status": 200,
+    "applicationCompany": {
+        "name": "株式会社sansan",
+        "detail": "名刺を管理する会社",
+        "reason": "B2Bの会社だから",
+        "contact_name": "",
+        "contact_email": null,
+        "phone_number": "080-8080-8080",
+        "id": 1,
+        "string": null,
+        "status_worker": "返答待ち",
+        "status_project": "返答待ち",
+        "user_id": 1,
+        "project_id": 5,
+        "created_at": "2021-09-27T05:59:36.513Z",
+        "updated_at": "2021-09-27T09:13:53.713Z"
+    }
+}
+

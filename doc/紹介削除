@@ -1,0 +1,10 @@
+DELETE /application_companies/:id
+
+parameters
+- id
+
+responses
+{
+    "status": 204,
+    "message": "Success"
+}
