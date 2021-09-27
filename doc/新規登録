@@ -1,0 +1,13 @@
+POST /user
+
+parameters
+- name
+- email
+- password
+- type
+
+responses
+{
+    "status": 201,
+    "token": "rtLEw7NSZEFdUUMKJ7PLiwx2"
+}

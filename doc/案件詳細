@@ -1,0 +1,21 @@
+GET /projects/:project_id
+
+Parameters
+- project_id
+
+Responses
+{
+    "status": 200,
+    "project": {
+        "id": 9,
+        "name": "名刺管理サービスの顧客となる会社募集中",
+        "status": "受付中",
+        "concept": "我々は名刺管理をアナログで行うのではなく、デジタルを活用して効率的に人脈を管理できるソリューションを提案しています",
+        "deadline": "2021-10-31T12:00:00.000Z",
+        "reward": 3000,
+        "created_at": "2021-09-27T06:51:36.294Z",
+        "updated_at": "2021-09-27T06:51:36.294Z",
+        "user_id": 1,
+        "category": "ソフトウェア・通信"
+    }
+}

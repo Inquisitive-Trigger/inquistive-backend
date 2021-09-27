@@ -1,0 +1,35 @@
+GET /projects/search
+
+parameters
+- category
+
+responses
+{
+    "status": 200,
+    "projects": [
+        {
+            "id": 4,
+            "name": "test_anken",
+            "status": null,
+            "concept": null,
+            "deadline": "2021-09-27T03:53:28.000Z",
+            "reward": null,
+            "created_at": "2021-09-27T03:53:11.308Z",
+            "updated_at": "2021-09-27T06:31:33.759Z",
+            "user_id": 1,
+            "category": "商社"
+        },
+        {
+            "id": 8,
+            "name": "応募おなしゃす",
+            "status": null,
+            "concept": null,
+            "deadline": null,
+            "reward": null,
+            "created_at": "2021-09-27T06:31:03.942Z",
+            "updated_at": "2021-09-27T06:31:03.942Z",
+            "user_id": null,
+            "category": "商社"
+        }
+    ]
+}

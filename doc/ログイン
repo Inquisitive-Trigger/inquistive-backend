@@ -1,0 +1,11 @@
+POST /session
+
+parameters
+- email
+- password
+
+responses
+{
+    "status": 201,
+    "token": "iULchxZbQ5pt2UDGFpn2JCNa"
+}
