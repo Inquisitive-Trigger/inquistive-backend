@@ -15,4 +15,16 @@ class ApplicationController < ActionController::API
       @current_user.present?
     end
   end
+
+  def searcher_authenticate
+    authenticate_or_request_with_http_token do |token, options|
+      @current_user.present? && @current_user.searcher?
+    end
+  end
+
+  def introducer_authenticate
+    authenticate_or_request_with_http_token do |token, options|
+      @current_user.present? && @current_user.introducer?
+    end
+  end
 end

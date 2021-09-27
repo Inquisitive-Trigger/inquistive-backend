@@ -1,4 +1,6 @@
 class ApplicationCompaniesController < ApplicationController
+  before_action :introducer_authenticate
+
   def create
     application = ApplicationCompany.new(
       name: params[:name],

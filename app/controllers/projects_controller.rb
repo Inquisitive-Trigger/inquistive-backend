@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :mine?, only: [:update, :destroy]
+
   def index
     if @current_user.searcher?
       # ユーザーが投稿した案件を取得
@@ -61,6 +63,15 @@ class ProjectsController < ApplicationController
       render json: { status: 204, message: "Success" }
     else
       render json: { status: 400, message: "Bad Request" }
+    end
+  end
+
+  private
+  
+  def mine?
+    project = Project.find(params[:id])
+    unless project.user.id == @current_user.id
+      redirect_to "/"
     end
   end
 end

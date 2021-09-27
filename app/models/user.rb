@@ -6,4 +6,8 @@ class User < ApplicationRecord
   def searcher?
     purpose
   end
+
+  def introducer?
+    !purpose
+  end
 end
