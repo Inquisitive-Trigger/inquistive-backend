@@ -9,4 +9,9 @@ class ProjectsController < ApplicationController
     project = Project.find(params[:id])
     render json: { status: 200, project: project }
   end
+
+  def search
+    projects = Project.where(category: params[:category]).limit(20)
+    render json: { status: 200, projects: projects }
+  end
 end
