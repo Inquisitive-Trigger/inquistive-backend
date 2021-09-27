@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_000012) do
+ActiveRecord::Schema.define(version: 2021_09_27_025329) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.boolean "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password"
     t.string "token"
+    t.boolean "purpose"
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
