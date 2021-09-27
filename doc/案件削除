@@ -1,0 +1,10 @@
+DELETE /projects/:project_id
+
+parameters
+- project_id (must)
+
+responses
+{
+    "status": 204,
+    "message": "Success"
+}

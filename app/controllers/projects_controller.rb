@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    project = Project.find([params[:id]])[0]
+    project = Project.find(params[:id])
     project.assign_attributes(
       name: params[:name],
       concept: params[:concept],
@@ -44,6 +44,15 @@ class ProjectsController < ApplicationController
     )
     if project.save!
       render json: { status: 200, project: project }
+    else
+      render json: { status: 400, message: "Bad Request" }
+    end
+  end
+
+  def destroy
+    project = Project.find(params[:id])
+    if project.destroy!
+      render json: { status: 204, message: "Success" }
     else
       render json: { status: 400, message: "Bad Request" }
     end
