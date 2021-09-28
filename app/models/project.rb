@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user, optional: true
+  has_many :application_companies
 
   def to_hash
     {
