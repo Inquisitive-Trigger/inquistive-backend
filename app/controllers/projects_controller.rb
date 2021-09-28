@@ -4,9 +4,11 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate, only: [:index, :show, :search]
 
   def index
-    if @current_user.present? && @current_user.searcher?
+    token = request.headers[:authorization]&.delete_prefix("Token ")
+    current_user = User.find_by(token: token)
+    if current_user.present? && current_user.searcher?
       # ユーザーが投稿した案件を取得
-      raw_projects = @current_user.projects
+      raw_projects = current_user.projects
       projects = raw_projects.map(&:to_hash)
       render json: { status: 200, projects: projects }
     else
