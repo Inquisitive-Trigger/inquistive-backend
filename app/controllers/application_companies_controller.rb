@@ -3,12 +3,12 @@ class ApplicationCompaniesController < ApplicationController
   before_action :mine?, only: [:update, :destroy]
 
   def index
-    application_companies = @current_user.application_companies
+    application_companies = @current_user.application_companies.map(&:to_hash)
     render json: { status: 200, applicationCompanies: application_companies }
   end
 
   def show
-    application = ApplicationCompany.find(params[:id])
+    application = ApplicationCompany.find(params[:id]).to_hash
     render json: { status: 200, applicationCompany: application }
   end
 
@@ -26,7 +26,7 @@ class ApplicationCompaniesController < ApplicationController
     application.user = @current_user
     application.project = Project.find(params[:projectId])
     if application.save!
-      render json: { status: 201, applicationCompany: application }
+      render json: { status: 201, applicationCompany: application.to_hash }
     else
       render json: { status: 400, token: "Bad Request" }
     end
@@ -44,7 +44,7 @@ class ApplicationCompaniesController < ApplicationController
     )
 
     if application.save!
-      render json: { status: 200, applicationCompany: application }
+      render json: { status: 200, applicationCompany: application.to_hash }
     else
       render json: { status: 400, token: "Bad Request" }
     end
