@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    project = Project.find(params[:id])
+    project = Project.find(params[:id]).to_hash
     render json: { status: 200, project: project }
   end
 
@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
     project.user = @current_user
     if project.save!
-      render json: { status: 201, project: project }
+      render json: { status: 201, project: project.to_hash }
     else
       render json: { status: 400, message: "Bad Request" }
     end
@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
       category: params[:category]
     )
     if project.save!
-      render json: { status: 200, project: project }
+      render json: { status: 200, project: project.to_hash }
     else
       render json: { status: 400, message: "Bad Request" }
     end
