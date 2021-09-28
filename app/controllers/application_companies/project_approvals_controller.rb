@@ -3,7 +3,7 @@ class ApplicationCompanies::ProjectApprovalsController < ApplicationController
     application = ApplicationCompany.find(params[:application_company_id])
     application.status_project = "承認"
     if application.save!
-      render json: { status: 200, applicationCompany: application }
+      render json: { status: 200, applicationCompany: application.to_hash }
     else
       render json: { status: 400, token: "Bad Request" }
     end
