@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :mine?, only: [:update, :destroy]
 
+  skip_before_action :authenticate, only: [:index, :show, :search]
+
   def index
-    if @current_user.searcher?
+    if @current_user.present? && @current_user.searcher?
       # ユーザーが投稿した案件を取得
       raw_projects = @current_user.projects
       projects = raw_projects.map(&:to_hash)
