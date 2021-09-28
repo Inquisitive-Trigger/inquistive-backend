@@ -4,10 +4,21 @@ Parameters
 - Nothing
 
 Responses
-
 {
     "status": 200,
     "projects": [
+        {
+            "id": 10,
+            "name": "名刺管理サービスの顧客となる会社募集中",
+            "status": "受付中",
+            "concept": "我々は名刺管理をアナログで行うのではなく、デジタルを活用して効率的に人脈を管理できるソリューションを提案しています",
+            "deadline": "2021-10-31T12:00:00.000Z",
+            "reward": 3000,
+            "created_at": "2021-09-27T07:00:32.339Z",
+            "updated_at": "2021-09-27T07:32:53.085Z",
+            "category": "ソフトウェア・通信",
+            "company_name": "松本会社"
+        },
         {
             "id": 9,
             "name": "名刺管理サービスの顧客となる会社募集中",
@@ -16,9 +27,9 @@ Responses
             "deadline": "2021-10-31T12:00:00.000Z",
             "reward": 3000,
             "created_at": "2021-09-27T06:51:36.294Z",
-            "updated_at": "2021-09-27T06:51:36.294Z",
-            "user_id": 1,
-            "category": "ソフトウェア・通信"
+            "updated_at": "2021-09-27T07:32:53.039Z",
+            "category": "ソフトウェア・通信",
+            "company_name": "松本会社"
         },
         {
             "id": 8,
@@ -28,9 +39,9 @@ Responses
             "deadline": null,
             "reward": null,
             "created_at": "2021-09-27T06:31:03.942Z",
-            "updated_at": "2021-09-27T06:31:03.942Z",
-            "user_id": null,
-            "category": "商社"
+            "updated_at": "2021-09-27T07:32:52.996Z",
+            "category": "商社",
+            "company_name": "松本会社"
         },
         {
             "id": 7,
@@ -40,9 +51,9 @@ Responses
             "deadline": null,
             "reward": null,
             "created_at": "2021-09-27T04:35:17.252Z",
-            "updated_at": "2021-09-27T04:35:17.252Z",
-            "user_id": null,
-            "category": null
+            "updated_at": "2021-09-27T07:32:52.953Z",
+            "category": null,
+            "company_name": "松本会社"
         },
         {
             "id": 6,
@@ -52,9 +63,9 @@ Responses
             "deadline": null,
             "reward": null,
             "created_at": "2021-09-27T04:35:15.272Z",
-            "updated_at": "2021-09-27T04:35:15.272Z",
-            "user_id": null,
-            "category": null
+            "updated_at": "2021-09-27T07:32:52.907Z",
+            "category": null,
+            "company_name": "松本会社"
         },
         {
             "id": 5,
@@ -64,21 +75,10 @@ Responses
             "deadline": null,
             "reward": null,
             "created_at": "2021-09-27T04:35:12.451Z",
-            "updated_at": "2021-09-27T04:35:12.451Z",
-            "user_id": null,
-            "category": null
-        },
-        {
-            "id": 4,
-            "name": "test_anken",
-            "status": null,
-            "concept": null,
-            "deadline": "2021-09-27T03:53:28.000Z",
-            "reward": null,
-            "created_at": "2021-09-27T03:53:11.308Z",
-            "updated_at": "2021-09-27T06:31:33.759Z",
-            "user_id": 1,
-            "category": "商社"
+            "updated_at": "2021-09-27T07:32:52.860Z",
+            "category": null,
+            "company_name": "松本会社"
         }
     ]
 }
+

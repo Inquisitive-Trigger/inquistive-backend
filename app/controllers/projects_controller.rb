@@ -4,11 +4,13 @@ class ProjectsController < ApplicationController
   def index
     if @current_user.searcher?
       # ユーザーが投稿した案件を取得
-      projects = @current_user.projects
+      raw_projects = @current_user.projects
+      projects = raw_projects.map(&:to_hash)
       render json: { status: 200, projects: projects }
     else
       # 案件最新20件を取得
-      projects = Project.order(created_at: :desc).limit(20)
+      raw_projects = Project.order(created_at: :desc).limit(20)
+      projects = raw_projects.map(&:to_hash)
       render json: { status: 200, projects: projects }
     end
   end
