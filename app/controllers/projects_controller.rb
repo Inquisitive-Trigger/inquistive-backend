@@ -35,8 +35,12 @@ class ProjectsController < ApplicationController
       name: params[:name],
       status: "受付中",
       concept: params[:concept],
+      appeal: params[:appeal],
+      wish_person: params[:wish_person],
       deadline: DateTime.parse(params[:deadline]),
       reward: params[:reward].to_i,
+      company_info: params[:company_info],
+      company_url: params[:company_url],
       category: params[:category]
     )
 
@@ -53,8 +57,12 @@ class ProjectsController < ApplicationController
     project.assign_attributes(
       name: params[:name],
       concept: params[:concept],
+      appeal: params[:appeal],
+      wish_person: params[:wish_person],
       deadline: DateTime.parse(params[:deadline]),
       reward: params[:reward].to_i,
+      company_info: params[:company_info],
+      company_url: params[:company_url],
       category: params[:category]
     )
     if project.save!

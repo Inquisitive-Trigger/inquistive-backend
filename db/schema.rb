@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_121408) do
+ActiveRecord::Schema.define(version: 2021_09_28_122558) do
 
   create_table "application_companies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_09_28_121408) do
     t.string "category"
     t.string "appeal"
     t.string "wish_person"
+    t.string "company_info"
+    t.string "company_url"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
