@@ -7,10 +7,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def searcher?
-    purpose
+    !purpose
   end
 
   def introducer?
-    !purpose
+    purpose
   end
 end
