@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   before_action :authenticate
 
   def index
-    render json: { status: 200, message: "Hello, we are inquisitive!!" }
+    render json: { status: 200, user: @current_user }
   end
 
   private
