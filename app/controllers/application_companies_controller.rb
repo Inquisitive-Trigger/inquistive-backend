@@ -1,6 +1,11 @@
 class ApplicationCompaniesController < ApplicationController
-  before_action :introducer_authenticate, only: [:create, :update, :destroy]
+  before_action :introducer_authenticate, only: [:index, :create, :update, :destroy]
   before_action :mine?, only: [:update, :destroy]
+
+  def index
+    application_companies = @current_user.application_companies
+    render json: { status: 200, applicationCompanies: application_companies }
+  end
 
   def show
     application = ApplicationCompany.find(params[:id])
