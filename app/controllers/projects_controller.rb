@@ -21,7 +21,8 @@ class ProjectsController < ApplicationController
   end
 
   def search
-    projects = Project.where(category: params[:category]).limit(20)
+    raw_projects = Project.where(category: params[:category]).limit(20)
+    projects = raw_projects.map(&:to_hash)
     render json: { status: 200, projects: projects }
   end
 
