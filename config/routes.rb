@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   root 'application#index'
 
   get "projects/search" => "projects#search"
+
+  get "user/followings" => "user#followings"
+  get "user/followers" => "user#followers"
 
   resources :session, only: [:create]
   resources :user, only: [:create]

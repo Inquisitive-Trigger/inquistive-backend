@@ -14,4 +14,14 @@ class UserController < ApplicationController
       render json: { status: 400, token: "Bad Request" }
     end
   end
+
+  def followings
+    users = @current_user.followings
+    render json: { status: 200, users: users }
+  end
+
+  def followers
+    users = @current_user.followers
+    render json: { status: 200, users: users }
+  end
 end
